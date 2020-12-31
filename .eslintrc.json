@@ -1,0 +1,20 @@
+{
+  "extends": ["airbnb/base", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-console": "off",
+    "camelcase": "off",
+    "func-names": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "no-nested-ternary": "off"
+  },
+  "globals": {
+    "test": "readonly",
+    "expect": "readonly"
+  }
+}

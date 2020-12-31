@@ -1,0 +1,33 @@
+<div class="mx-auto my-4 w-75 text-center">
+    <h1 class="display-3">Here's the small analysis of how you improved</h1>
+    <div class="card text-center border-0 rounded shadow-lg">
+        <div class="card-body">
+            <h2 class="card-title">
+                Simple comparison of your 2 runs
+            </h2>
+            <p class="card-text">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Property</th>
+                            <th scope="col">Before</th>
+                            <th scope="col">After</th>
+                            <th scope="col">Progress (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each comparisons as |comparison|}}
+                            <tr>
+                                <td>{{comparison.property}}</td>
+                                <td>{{comparison.previously}}</td>
+                                <td>{{comparison.currently}}</td>
+                                <td class="{{comparison.difference_class}}">{{comparison.difference}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </p>
+            <a href="/" class="btn btn-outline-dark rounded-pill btn-lg px-4 py-3">Compare other runs</a>
+        </div>
+    </div>
+</div>

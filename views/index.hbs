@@ -1,0 +1,59 @@
+<div class="mx-auto my-4 w-75 text-center">
+    <h1>Run the same route twice and see how you improved!</h1>
+    <h2 class="text-secondary text-left">
+        Currently supported platforms: Polar Flow, Garmin Connect
+        <br/>
+        Currently supported formats: CSV
+    </h2>
+    <form
+        method="post"
+        enctype="multipart/form-data"
+        action="/compare-two-runs"
+        class="d-flex flex-column justify-content-center align-items-center mt-4"
+    >
+        <div class="d-flex flex-column flex-nowrap justify-content-between">
+            <div class="input-group mb-3">
+                <input
+                    class="form-control"
+                    type="file"
+                    id="first_run"
+                    name="first_run"
+                    accept="text/csv"
+                    multiple="false"
+                >
+                <label class="input-group-text" for="first_run">Upload First Run</label>
+            </div>
+            <div class="input-group mb-3">
+                <input
+                    class="form-control"
+                    type="file"
+                    id="last_run"
+                    name="last_run"
+                    accept="text/csv"
+                    multiple="false"
+                >
+                <label class="input-group-text" for="last_run">Upload Last Run</label>
+            </div>
+        </div>
+        <input
+            id="compare-two-runs-button"
+            type="submit"
+            class="btn btn-outline-dark rounded-pill btn-lg px-4 py-3"
+            value="Analyse"
+        />
+    </form>
+</div>
+{{#extend "scripts"}}
+<script>
+    const checkActivitiesDataButton = document.querySelector('#compare-two-runs-button');
+
+    checkActivitiesDataButton.addEventListener('click', function(event) {
+        if (
+            window.confirm("I confirm that I have read and agree with this app's Terms of Use and Privacy Policy.")
+        ) {
+            return;
+        }
+        event.preventDefault();
+    });
+</script>
+{{/extend}}
